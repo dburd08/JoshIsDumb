@@ -1,5 +1,7 @@
 var request = require('request');
 
+var spellList = 'spellList.json';
+
 exports.getSpell = function(){
   request('http://dnd5eapi.co/api/spells', function (error,response,body){
     if (!error && response.statusCode == 200) {
