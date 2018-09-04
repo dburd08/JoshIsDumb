@@ -5,6 +5,7 @@ const client = new Discord.Client();
 const auth = require('./auth.json');
 const token = auth.token;
 
+var spells = require('./spells.js');
 var overwatch = require('./overwatchModule.js');
 var torb = require('./torb.js');
 var naruto = require('./naruto.js');
@@ -64,7 +65,9 @@ client.on("message", (message) => {
         message.channel.send(overwatch.heros[Math.floor(Math.random()*overwatch.heros.length)], {tts: true});
         }
     }
-
+  if (message.content.startsWith(prefix + "spells")){
+    spells.getSpell();
+  }
   //end of bot listening
 });
 
