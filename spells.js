@@ -6,23 +6,32 @@ var obj = JSON.parse(fs.readFileSync('spellList.json', 'utf8'));
 
 exports.getSpell = function(name){
   var spellURL = spellUrl(name);
-  var spellDescription = getDetails(spellURL);
-  console.log(spellDescription);
-  //console.log(spellDescription);
+  var myPromise = getDetails(spellURL)
+  myPromise.then(function(data){
+    return data;
+  });
   //var parsedDetails = JSON.parse(spellDescription, 'utf8');
-  return "test success";
 }
 
 function getDetails(url){
-  request(url, function (error,response,body){
-  if (!error && response.statusCode == 200) {
-    return JSON.parse(body);
-  }else{
-    console.log(error);
-    console.log(response);
-  }
-});
+  const options = {
+    url: url,
+    method: 'GET',
+    json: true
+  };
+  return new Promise (function (resolve, reject){
+    request(options, function (error,response,body){
+      if (!error && response.statusCode == 200) {
+        //console.log(body);
+        //console.log(JSON.parse(jsonObj));
+        resolve(body);
+      }else{
+        reject(error);
+      }
+    });
+  });
 }
+
 function spellUrl(spellName){
   var i = null;
   var url = null;
@@ -39,10 +48,4 @@ function spellUrl(spellName){
     console.log("didnt find name");
     return "didnt find this spell";
   }
-}
-
-function modifyURLBody(body){
-
-    delete body[id];
-    return body;
 }

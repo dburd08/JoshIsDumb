@@ -65,7 +65,7 @@ client.on("message", (message) => {
         message.channel.send(overwatch.heros[Math.floor(Math.random()*overwatch.heros.length)], {tts: true});
         }
     }
-  if (message.content.startsWith(prefix + "spells")){
+  if (message.content.startsWith(prefix + "spells") || message.content.startsWith(prefix + "spell")){
     if (message.content.split(" ").length >1){
       var name = message.content.substring(message.content.indexOf(" ")+1);
       message.channel.send(spells.getSpell(name));
