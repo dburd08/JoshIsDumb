@@ -1,4 +1,4 @@
-{"count":305,"results":[
+{"results":[
   {"name":"Acid Arrow","url":"http://www.dnd5eapi.co/api/spells/1"},
   {"name":"Acid Splash","url":"http://www.dnd5eapi.co/api/spells/2"},
   {"name":"Aid","url":"http://www.dnd5eapi.co/api/spells/3"},
@@ -15,7 +15,7 @@
   {"name":"Arcane Hand","url":"http://www.dnd5eapi.co/api/spells/14"},
   {"name":"Arcane Lock","url":"http://www.dnd5eapi.co/api/spells/15"},
   {"name":"Arcane Sword","url":"http://www.dnd5eapi.co/api/spells/16"},
-  {"name":"Arcanist\'s Magic Aura","url":"http://www.dnd5eapi.co/api/spells/17"},
+  {"name":"Arcanist's Magic Aura","url":"http://www.dnd5eapi.co/api/spells/17"},
   {"name":"Astral Projection","url":"http://www.dnd5eapi.co/api/spells/18"},
   {"name":"Augury","url":"http://www.dnd5eapi.co/api/spells/19"},
   {"name":"Awaken","url":"http://www.dnd5eapi.co/api/spells/20"},
@@ -145,7 +145,7 @@
   {"name":"Heal","url":"http://www.dnd5eapi.co/api/spells/144"},
   {"name":"Healing Word","url":"http://www.dnd5eapi.co/api/spells/145"},
   {"name":"Heat Metal","url":"http://www.dnd5eapi.co/api/spells/146"},
-  {"name":"Heroes\' Feast","url":"http://www.dnd5eapi.co/api/spells/147"},
+  {"name":"Heroes' Feast","url":"http://www.dnd5eapi.co/api/spells/147"},
   {"name":"Heroism","url":"http://www.dnd5eapi.co/api/spells/148"},
   {"name":"Hideous Laughter","url":"http://www.dnd5eapi.co/api/spells/149"},
   {"name":"Hold Monster","url":"http://www.dnd5eapi.co/api/spells/150"},

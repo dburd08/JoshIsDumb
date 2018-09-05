@@ -66,7 +66,11 @@ client.on("message", (message) => {
         }
     }
   if (message.content.startsWith(prefix + "spells")){
-    spells.getSpell();
+    if (message.content.split(" ").length >1){
+      message.channel.send(spells.getSpell(message.content.split("spells ")[1]));
+    }else{
+      message.channel.send("Thats not a spell name");
+    }
   }
   //end of bot listening
 });
