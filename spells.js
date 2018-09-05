@@ -8,6 +8,7 @@ exports.getSpell = function(name){
   var spellURL = spellUrl(name);
   var spellDescription = getDetails(spellURL);
   console.log(spellDescription);
+  //console.log(spellDescription);
   //var parsedDetails = JSON.parse(spellDescription, 'utf8');
   return "test success";
 }
@@ -15,7 +16,7 @@ exports.getSpell = function(name){
 function getDetails(url){
   request(url, function (error,response,body){
   if (!error && response.statusCode == 200) {
-    return(body);
+    return JSON.parse(body);
   }else{
     console.log(error);
     console.log(response);
@@ -25,15 +26,19 @@ function getDetails(url){
 function spellUrl(spellName){
   var i = null;
   var url = null;
-  for (i = 0; obj.results.length > 1; i += 1){
-    if (obj.results[i].name === spellName){
-      url = obj.results[i].url;
-      console.log("foundURL");
-      return url;
+  try{
+    for (i = 0; obj.results.length > 1; i += 1){
+        if (obj.results[i].name === spellName){
+          url = obj.results[i].url;
+          console.log("foundURL");
+          return url;
+      }
     }
   }
-  console.log("didnt find name");
-  return "didnt find this spell";
+  catch(error){
+    console.log("didnt find name");
+    return "didnt find this spell";
+  }
 }
 
 function modifyURLBody(body){
